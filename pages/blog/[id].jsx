@@ -31,15 +31,20 @@ export const getStaticProps = async (context) => {
 
 export default function BlogId({ blog }) {
 	return (
-		<main className={styles.main}>
-			<h1 className={styles.title}>{blog.title}</h1>
-			<p className={styles.publishedAt}>{blog.publishedAt}</p>
-			<div
-				dangerouslySetInnerHTML={{
-					__html: `${blog.body}`,
-				}}
-				className={styles.post}
-			/>
-		</main>
+		<>
+			<main className={styles.main}>
+				<h1 className={styles.title}>{blog.title}</h1>
+				<p className={styles.publishedAt}>{blog.publishedAt}</p>
+				<div
+					dangerouslySetInnerHTML={{
+						__html: `${blog.body}`,
+					}}
+					className={styles.post}
+				/>
+				<a className={styles.back} href="/">
+					戻る
+				</a>
+			</main>
+		</>
 	);
 }
